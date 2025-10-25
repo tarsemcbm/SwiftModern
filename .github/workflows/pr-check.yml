@@ -23,10 +23,10 @@ jobs:
       
       - name: Run SwiftLint
         run: |
-          if [ -d "SwiftModern" ]; then
-            swiftlint lint --path SwiftModern/
+          if [ -f ".swiftlint.yml" ]; then
+            swiftlint lint --strict
           else
-            echo "SwiftModern directory not found, skipping SwiftLint"
+            echo "No .swiftlint.yml found, skipping"
           fi
       
       - name: Setup Swift
