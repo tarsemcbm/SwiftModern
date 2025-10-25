@@ -1,14 +1,18 @@
 # SwiftLint Configuration
 
-# Paths to include/exclude
+# Paths to include
 included:
-  - Sources
-  - Tests
+  - SwiftModern
+  - SwiftModernTests
+  - SwiftModernUITests
 
 excluded:
   - Pods
   - .build
   - .swiftpm
+  - Carthage
+  - vendor
+  - .github
 
 # Rules
 disabled_rules:
