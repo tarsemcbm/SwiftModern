@@ -1,0 +1,13 @@
+#!/bin/sh
+
+protected_branches='main|develop'
+current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+
+if echo $current_branch | grep -qE "^($protected_branches)$"; then
+    echo "❌ Direct push to $current_branch is not allowed!"
+    echo "Create a PR instead."
+    exit 1
+fi
+
+echo "✅ Push allowed"
+exit 0

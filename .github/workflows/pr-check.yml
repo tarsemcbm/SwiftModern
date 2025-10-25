@@ -18,6 +18,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       
+      - name: Install SwiftLint
+        run: brew install swiftlint
+      
+      - name: Run SwiftLint
+        run: |
+          if [ -f ".swiftlint.yml" ]; then
+            swiftlint
+          else
+            echo "No .swiftlint.yml found, skipping"
+          fi
+      
       - name: Setup Swift
         uses: swift-actions/setup-swift@v2
         with:

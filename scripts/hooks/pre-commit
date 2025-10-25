@@ -1,0 +1,28 @@
+#!/bin/sh
+
+echo "🔍 Running SwiftLint..."
+
+if command -v swiftlint >/dev/null 2>&1; then
+    # Try to auto-fix
+    echo "🔧 Auto-fixing violations..."
+    swiftlint --fix --format --quiet
+    
+    # Add fixed files to commit
+    git add -u
+    
+    # Check if there are remaining violations
+    swiftlint lint --strict --quiet
+    
+    if [ $? -ne 0 ]; then
+        echo ""
+        echo "❌ SwiftLint found violations that couldn't be auto-fixed!"
+        echo "Please fix them manually or use: swiftlint --fix"
+        echo "Or skip this check with: git commit --no-verify"
+        exit 1
+    fi
+    echo "✅ SwiftLint passed!"
+else
+    echo "⚠️  SwiftLint not installed. Install with: brew install swiftlint"
+fi
+
+exit 0
