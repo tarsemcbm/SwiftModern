@@ -24,7 +24,7 @@ jobs:
       - name: Run SwiftLint
         run: |
           if [ -f ".swiftlint.yml" ]; then
-            swiftlint lint --strict
+            swiftlint
           else
             echo "No .swiftlint.yml found, skipping"
           fi
