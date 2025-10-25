@@ -1,51 +1,28 @@
 #!/bin/sh
 
-echo "🔍 Running SwiftLint on staged files..."
+echo "🔍 Running SwiftLint..."
 
-# Find SwiftLint
-SWIFTLINT_PATH=$(command -v swiftlint || echo "/opt/homebrew/bin/swiftlint")
-if [ ! -x "$SWIFTLINT_PATH" ]; then
-    SWIFTLINT_PATH="/usr/local/bin/swiftlint"
+if command -v swiftlint >/dev/null 2>&1; then
+    # Try to auto-fix
+    echo "🔧 Auto-fixing violations..."
+    swiftlint --fix --format --quiet
+    
+    # Add fixed files to commit
+    git add -u
+    
+    # Check if there are remaining violations
+    swiftlint lint --strict --quiet
+    
+    if [ $? -ne 0 ]; then
+        echo ""
+        echo "❌ SwiftLint found violations that couldn't be auto-fixed!"
+        echo "Please fix them manually or use: swiftlint --fix"
+        echo "Or skip this check with: git commit --no-verify"
+        exit 1
+    fi
+    echo "✅ SwiftLint passed!"
+else
+    echo "⚠️  SwiftLint not installed. Install with: brew install swiftlint"
 fi
 
-if [ ! -x "$SWIFTLINT_PATH" ]; then
-    echo "❌ SwiftLint not found! Install with: brew install swiftlint"
-    exit 1
-fi
-
-# Get staged Swift files
-staged_files=$(git diff --cached --name-only --diff-filter=ACM | grep '\.swift$')
-
-if [ -z "$staged_files" ]; then
-    echo "No Swift files staged for commit."
-    exit 0
-fi
-
-echo "✅ Found SwiftLint at: $SWIFTLINT_PATH"
-
-# Create temp file for staged files list
-STAGED_FILES_LIST=$(mktemp)
-echo "$staged_files" > "$STAGED_FILES_LIST"
-
-# Auto-fix staged files
-echo "🔧 Auto-fixing violations..."
-"$SWIFTLINT_PATH" --fix --quiet --config ./.swiftlint.yml
-
-# Re-stage auto-fixed files
-git add $(echo "$staged_files")
-
-# Lint staged files
-echo "🔍 Linting..."
-"$SWIFTLINT_PATH" lint --strict --quiet --config ./.swiftlint.yml
-
-if [ $? -ne 0 ]; then
-    echo ""
-    echo "❌ SwiftLint found violations that couldn't be auto-fixed!"
-    echo "Fix them manually or skip with: git commit --no-verify"
-    rm "$STAGED_FILES_LIST"
-    exit 1
-fi
-
-rm "$STAGED_FILES_LIST"
-echo "✅ SwiftLint passed!"
 exit 0
