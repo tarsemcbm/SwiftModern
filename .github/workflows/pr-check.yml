@@ -1,0 +1,35 @@
+name: PR Check
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  check:
+    runs-on: macos-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Swift
+        uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: "5.9"
+      
+      - name: Build
+        run: |
+          if [ -f "Package.swift" ]; then
+            swift build
+          else
+            echo "No Package.swift found, skipping build"
+          fi
+      
+      - name: Success
+        run: echo "✅ All checks passed!"
