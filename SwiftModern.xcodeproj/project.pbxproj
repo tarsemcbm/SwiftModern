@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		06775CCF2EB6D6C10037F7BF /* NetworkingKit in Frameworks */ = {isa = PBXBuildFile; productRef = 06775CCE2EB6D6C10037F7BF /* NetworkingKit */; };
+		06775CD42EB6F5D20037F7BF /* NetworkingKit in Frameworks */ = {isa = PBXBuildFile; productRef = 06775CD32EB6F5D20037F7BF /* NetworkingKit */; };
+		06775CD72EB6F5DF0037F7BF /* WeatherService in Frameworks */ = {isa = PBXBuildFile; productRef = 06775CD62EB6F5DF0037F7BF /* WeatherService */; };
+		06775CDA2EB6F5E90037F7BF /* NetworkingKit in Frameworks */ = {isa = PBXBuildFile; productRef = 06775CD92EB6F5E90037F7BF /* NetworkingKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		06225C5F2EAD3F0500BB8FCD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +34,8 @@
 		06225C512EAD3F0400BB8FCD /* SwiftModern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftModern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06225C5E2EAD3F0500BB8FCD /* SwiftModernTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftModernTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06225C682EAD3F0500BB8FCD /* SwiftModernUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftModernUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		06775CD02EB6D7FD0037F7BF /* NetworkingKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkingKit; sourceTree = "<group>"; };
+		06775CD12EB6EFCB0037F7BF /* WeatherService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = WeatherService; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -52,6 +61,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06775CD72EB6F5DF0037F7BF /* WeatherService in Frameworks */,
+				06775CDA2EB6F5E90037F7BF /* NetworkingKit in Frameworks */,
+				06775CCF2EB6D6C10037F7BF /* NetworkingKit in Frameworks */,
+				06775CD42EB6F5D20037F7BF /* NetworkingKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +91,8 @@
 				06225C532EAD3F0400BB8FCD /* SwiftModern */,
 				06225C612EAD3F0500BB8FCD /* SwiftModernTests */,
 				06225C6B2EAD3F0500BB8FCD /* SwiftModernUITests */,
+				06775CD12EB6EFCB0037F7BF /* WeatherService */,
+				06775CD02EB6D7FD0037F7BF /* NetworkingKit */,
 				06225C522EAD3F0400BB8FCD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,6 +128,10 @@
 			);
 			name = SwiftModern;
 			packageProductDependencies = (
+				06775CCE2EB6D6C10037F7BF /* NetworkingKit */,
+				06775CD32EB6F5D20037F7BF /* NetworkingKit */,
+				06775CD62EB6F5DF0037F7BF /* WeatherService */,
+				06775CD92EB6F5E90037F7BF /* NetworkingKit */,
 			);
 			productName = SwiftModern;
 			productReference = 06225C512EAD3F0400BB8FCD /* SwiftModern.app */;
@@ -196,6 +215,10 @@
 			);
 			mainGroup = 06225C482EAD3F0400BB8FCD;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				06775CD52EB6F5DF0037F7BF /* XCLocalSwiftPackageReference "WeatherService" */,
+				06775CD82EB6F5E90037F7BF /* XCLocalSwiftPackageReference "NetworkingKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 06225C522EAD3F0400BB8FCD /* Products */;
 			projectDirPath = "";
@@ -601,6 +624,36 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		06775CD52EB6F5DF0037F7BF /* XCLocalSwiftPackageReference "WeatherService" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = WeatherService;
+		};
+		06775CD82EB6F5E90037F7BF /* XCLocalSwiftPackageReference "NetworkingKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = NetworkingKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		06775CCE2EB6D6C10037F7BF /* NetworkingKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkingKit;
+		};
+		06775CD32EB6F5D20037F7BF /* NetworkingKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkingKit;
+		};
+		06775CD62EB6F5DF0037F7BF /* WeatherService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WeatherService;
+		};
+		06775CD92EB6F5E90037F7BF /* NetworkingKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkingKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 06225C492EAD3F0400BB8FCD /* Project object */;
 }
