@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06021E4D2ECD328C00472B77 /* GitHubService in Frameworks */ = {isa = PBXBuildFile; productRef = 06021E4C2ECD328C00472B77 /* GitHubService */; };
 		06775CCF2EB6D6C10037F7BF /* NetworkingKit in Frameworks */ = {isa = PBXBuildFile; productRef = 06775CCE2EB6D6C10037F7BF /* NetworkingKit */; };
 		06775CD42EB6F5D20037F7BF /* NetworkingKit in Frameworks */ = {isa = PBXBuildFile; productRef = 06775CD32EB6F5D20037F7BF /* NetworkingKit */; };
 		06775CD72EB6F5DF0037F7BF /* WeatherService in Frameworks */ = {isa = PBXBuildFile; productRef = 06775CD62EB6F5DF0037F7BF /* WeatherService */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06021E4A2ECD313800472B77 /* GitHubService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = GitHubService; sourceTree = "<group>"; };
 		06225C512EAD3F0400BB8FCD /* SwiftModern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftModern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06225C5E2EAD3F0500BB8FCD /* SwiftModernTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftModernTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06225C682EAD3F0500BB8FCD /* SwiftModernUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftModernUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06021E4D2ECD328C00472B77 /* GitHubService in Frameworks */,
 				06775CD72EB6F5DF0037F7BF /* WeatherService in Frameworks */,
 				06775CDA2EB6F5E90037F7BF /* NetworkingKit in Frameworks */,
 				06775CCF2EB6D6C10037F7BF /* NetworkingKit in Frameworks */,
@@ -91,6 +94,7 @@
 				06225C532EAD3F0400BB8FCD /* SwiftModern */,
 				06225C612EAD3F0500BB8FCD /* SwiftModernTests */,
 				06225C6B2EAD3F0500BB8FCD /* SwiftModernUITests */,
+				06021E4A2ECD313800472B77 /* GitHubService */,
 				06775CD12EB6EFCB0037F7BF /* WeatherService */,
 				06775CD02EB6D7FD0037F7BF /* NetworkingKit */,
 				06225C522EAD3F0400BB8FCD /* Products */,
@@ -132,6 +136,9 @@
 				06775CD32EB6F5D20037F7BF /* NetworkingKit */,
 				06775CD62EB6F5DF0037F7BF /* WeatherService */,
 				06775CD92EB6F5E90037F7BF /* NetworkingKit */,
+				0602E2302EB9D5390059A3D4 /* GitHubService */,
+				069215982EB9D6D8008710C5 /* GitHubService */,
+				06021E4C2ECD328C00472B77 /* GitHubService */,
 			);
 			productName = SwiftModern;
 			productReference = 06225C512EAD3F0400BB8FCD /* SwiftModern.app */;
@@ -218,6 +225,7 @@
 			packageReferences = (
 				06775CD52EB6F5DF0037F7BF /* XCLocalSwiftPackageReference "WeatherService" */,
 				06775CD82EB6F5E90037F7BF /* XCLocalSwiftPackageReference "NetworkingKit" */,
+				06021E4B2ECD328C00472B77 /* XCLocalSwiftPackageReference "GitHubService" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 06225C522EAD3F0400BB8FCD /* Products */;
@@ -626,6 +634,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
+		06021E4B2ECD328C00472B77 /* XCLocalSwiftPackageReference "GitHubService" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = GitHubService;
+		};
 		06775CD52EB6F5DF0037F7BF /* XCLocalSwiftPackageReference "WeatherService" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = WeatherService;
@@ -637,6 +649,14 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		06021E4C2ECD328C00472B77 /* GitHubService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GitHubService;
+		};
+		0602E2302EB9D5390059A3D4 /* GitHubService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GitHubService;
+		};
 		06775CCE2EB6D6C10037F7BF /* NetworkingKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NetworkingKit;
@@ -652,6 +672,10 @@
 		06775CD92EB6F5E90037F7BF /* NetworkingKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NetworkingKit;
+		};
+		069215982EB9D6D8008710C5 /* GitHubService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GitHubService;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -13,7 +13,7 @@
 import Foundation
 
 // MARK: - Welcome
-public struct WeatherResponse: Codable {
+public struct WeatherResponse: Codable, Hashable {
     public let coord: Coord
     public let weather: [Weather]
     public let base: String
@@ -29,16 +29,16 @@ public struct WeatherResponse: Codable {
 }
 
 // MARK: - Clouds
-public struct Clouds: Codable {
+public struct Clouds: Codable, Hashable {
     public let all: Int
 }
 
 // MARK: - Coord
-public struct Coord: Codable {
+public struct Coord: Codable, Hashable {
 }
 
 // MARK: - Main
-public struct Main: Codable {
+public struct Main: Codable, Hashable {
     public let temp, feelsLike, tempMin, tempMax: Double
     public let pressure, humidity, seaLevel, grndLevel: Int
 
@@ -54,14 +54,14 @@ public struct Main: Codable {
 }
 
 // MARK: - Sys
-public struct Sys: Codable {
+public struct Sys: Codable, Hashable {
     public let type, id: Int
     public let country: String?
     public let sunrise, sunset: Int
 }
 
 // MARK: - Weather
-public struct Weather: Codable {
+public struct Weather: Codable, Hashable {
     public let id: Int
     public let main, description, icon: String
 }
